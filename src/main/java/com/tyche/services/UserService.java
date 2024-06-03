@@ -32,7 +32,6 @@ public class UserService {
 
     public User createUser(UserDTO data){
         User newUser = new User(data);
-        System.out.println("newUser: " + newUser);
         this.saveUser(newUser);
         return newUser;
     }

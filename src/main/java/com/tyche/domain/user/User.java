@@ -27,6 +27,7 @@ public class User {
     private BigDecimal balance;
     @Enumerated(EnumType.STRING)
     private UserType userType;
+    private Boolean status;
 
     public User(UserDTO data){
         this.firstName = data.firstName();
@@ -36,5 +37,6 @@ public class User {
         this.password = data.password();
         this.email = data.email();
         this.userType = data.userType();
+        this.status = data.status();
     }
 }
