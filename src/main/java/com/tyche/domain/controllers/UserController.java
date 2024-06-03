@@ -1,8 +1,8 @@
-package com.picpaysimplificado.domain.controllers;
+package com.tyche.domain.controllers;
 
-import com.picpaysimplificado.domain.user.User;
-import com.picpaysimplificado.dtos.UserDTO;
-import com.picpaysimplificado.services.UserService;
+import com.tyche.domain.user.User;
+import com.tyche.dtos.UserDTO;
+import com.tyche.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

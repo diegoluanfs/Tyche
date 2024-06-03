@@ -1,13 +1,13 @@
-package com.picpaysimplificado;
+package com.tyche;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PicpaysimplificadoApplication {
+public class TycheApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PicpaysimplificadoApplication.class, args);
+		SpringApplication.run(TycheApplication.class, args);
 	}
 
 }

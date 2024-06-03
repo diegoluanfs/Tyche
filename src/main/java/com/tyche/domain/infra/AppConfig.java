@@ -1,4 +1,4 @@
-package com.picpaysimplificado.domain.infra;
+package com.tyche.domain.infra;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

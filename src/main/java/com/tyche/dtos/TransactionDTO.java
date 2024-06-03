@@ -1,4 +1,4 @@
-package com.picpaysimplificado.dtos;
+package com.tyche.dtos;
 
 import java.math.BigDecimal;
 

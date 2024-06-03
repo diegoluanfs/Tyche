@@ -1,6 +1,6 @@
-package com.picpaysimplificado.domain.infra;
+package com.tyche.domain.infra;
 
-import com.picpaysimplificado.dtos.ExceptionDTO;
+import com.tyche.dtos.ExceptionDTO;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;

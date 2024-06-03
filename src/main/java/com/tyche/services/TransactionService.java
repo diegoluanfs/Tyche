@@ -1,16 +1,15 @@
-package com.picpaysimplificado.services;
+package com.tyche.services;
 
-import com.picpaysimplificado.domain.transaction.Transaction;
-import com.picpaysimplificado.domain.user.User;
-import com.picpaysimplificado.dtos.TransactionDTO;
-import com.picpaysimplificado.repositories.TransactionRepository;
+import com.tyche.domain.transaction.Transaction;
+import com.tyche.domain.user.User;
+import com.tyche.dtos.TransactionDTO;
+import com.tyche.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.management.Notification;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;

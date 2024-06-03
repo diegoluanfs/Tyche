@@ -1,6 +1,6 @@
-package com.picpaysimplificado.domain.user;
+package com.tyche.domain.user;
 
-import com.picpaysimplificado.dtos.UserDTO;
+import com.tyche.dtos.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

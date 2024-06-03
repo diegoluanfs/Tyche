@@ -1,6 +1,6 @@
-package com.picpaysimplificado.dtos;
+package com.tyche.dtos;
 
-import com.picpaysimplificado.domain.user.UserType;
+import com.tyche.domain.user.UserType;
 
 import java.math.BigDecimal;
 

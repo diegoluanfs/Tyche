@@ -1,9 +1,9 @@
-package com.picpaysimplificado.services;
+package com.tyche.services;
 
-import com.picpaysimplificado.domain.user.User;
-import com.picpaysimplificado.domain.user.UserType;
-import com.picpaysimplificado.dtos.UserDTO;
-import com.picpaysimplificado.repositories.UserRepository;
+import com.tyche.domain.user.User;
+import com.tyche.domain.user.UserType;
+import com.tyche.dtos.UserDTO;
+import com.tyche.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
