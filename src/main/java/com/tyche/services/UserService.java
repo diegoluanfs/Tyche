@@ -2,6 +2,7 @@ package com.tyche.services;
 
 import com.tyche.domain.user.User;
 import com.tyche.domain.user.UserType;
+import com.tyche.dtos.RespUserDTO;
 import com.tyche.dtos.UserCreateDTO;
 import com.tyche.dtos.UserUpdateDTO;
 import com.tyche.dtos.UserStatusUpdateDTO;
@@ -10,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -68,8 +71,24 @@ public class UserService {
         return existingUser;
     }
 
-    public List<User> getAllUsers(){
-        return this.repository.findAll();
+    public List<RespUserDTO> getAllUsers(){
+        List<User> users = this.repository.findAll();
+        List<RespUserDTO> respUserDTOs = new ArrayList<>();
+
+        for (User user : users) {
+            RespUserDTO dto = new RespUserDTO(
+                    user.getId(),
+                    user.getFirstName(),
+                    user.getLastName(),
+                    user.getEmail(),
+                    user.getBalance(),
+                    user.getUserType(),
+                    user.getStatus()
+            );
+            respUserDTOs.add(dto);
+        }
+        System.out.println("respUserDTOs: " + respUserDTOs);
+        return respUserDTOs;
     }
 
     public Optional<User> findById(long id){

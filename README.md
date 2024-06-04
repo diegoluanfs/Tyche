@@ -23,7 +23,7 @@ O projeto Tyche é um microserviço de backend desenvolvido em Java, Spring Boot
     <li>✅ - Listar usuários pelo Id</li>
     <li>✅ - Editar usuários</li>
     <li>✅ - Alterar status do usuário</li>
-    <li>📝 - Melhorar o retorno do getAll</li>
+    <li>✅ - Melhorar o retorno do getAll</li>
     <li>📝 - Desenvolver sistema para transações</li>
     <li>📝 - Gerar extrato bancário</li>
     <li>📝 - Criar sistemas de autenticação</li>

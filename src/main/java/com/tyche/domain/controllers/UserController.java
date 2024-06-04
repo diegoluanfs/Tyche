@@ -1,6 +1,7 @@
 package com.tyche.domain.controllers;
 
 import com.tyche.domain.user.User;
+import com.tyche.dtos.RespUserDTO;
 import com.tyche.dtos.UserCreateDTO;
 import com.tyche.dtos.UserUpdateDTO;
 import com.tyche.dtos.UserStatusUpdateDTO;
@@ -39,8 +40,8 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers(){
-        List<User> users = this.userService.getAllUsers();
+    public ResponseEntity<List<RespUserDTO>> getAllUsers(){
+        List<RespUserDTO> users = this.userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
