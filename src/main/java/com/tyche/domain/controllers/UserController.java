@@ -1,7 +1,8 @@
 package com.tyche.domain.controllers;
 
 import com.tyche.domain.user.User;
-import com.tyche.dtos.UserDTO;
+import com.tyche.dtos.UserCreateDTO;
+import com.tyche.dtos.UserUpdateDTO;
 import com.tyche.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,9 +20,15 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody UserDTO user){
+    public ResponseEntity<User> createUser(@RequestBody UserCreateDTO user){
         User newUser = userService.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+    }
+
+    @PutMapping
+    public ResponseEntity<User> updateUser(@RequestBody UserUpdateDTO user){
+        User updatedUser = userService.updateUser(user);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
     @GetMapping

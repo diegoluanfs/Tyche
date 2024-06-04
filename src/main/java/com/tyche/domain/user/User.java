@@ -1,6 +1,7 @@
 package com.tyche.domain.user;
 
-import com.tyche.dtos.UserDTO;
+import com.tyche.dtos.UserCreateDTO;
+import com.tyche.dtos.UserUpdateDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,14 +30,21 @@ public class User {
     private UserType userType;
     private Boolean status;
 
-    public User(UserDTO data){
+    public User(UserCreateDTO data){
         this.firstName = data.firstName();
         this.lastName = data.lastName();
-        this.balance = data.balance();
         this.document = data.document();
         this.password = data.password();
         this.email = data.email();
-        this.userType = data.userType();
-        this.status = data.status();
+        this.balance = BigDecimal.valueOf(0);
+        this.userType = UserType.COMMON;
+        this.status = true;
+    }
+
+    public User(UserUpdateDTO data){
+        this.id = data.id();
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.password = data.password();
     }
 }
