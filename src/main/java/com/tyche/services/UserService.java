@@ -4,8 +4,8 @@ import com.tyche.domain.user.User;
 import com.tyche.domain.user.UserType;
 import com.tyche.dtos.UserCreateDTO;
 import com.tyche.dtos.UserUpdateDTO;
+import com.tyche.dtos.UserStatusUpdateDTO;
 import com.tyche.repositories.UserRepository;
-import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +47,20 @@ public class UserService {
         existingUser.setFirstName(data.firstName());
         existingUser.setLastName(data.lastName());
         existingUser.setPassword(data.password());
+
+        // Salva o usuário atualizado
+        this.repository.save(existingUser);
+
+        return existingUser;
+    }
+
+    public User userStatusUpdate(UserStatusUpdateDTO data) {
+        // Busca o usuário existente pelo ID
+        User existingUser = this.repository.findById(data.id())
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        // Atualiza os campos modificáveis
+        existingUser.setStatus(data.status());
 
         // Salva o usuário atualizado
         this.repository.save(existingUser);

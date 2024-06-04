@@ -3,6 +3,7 @@ package com.tyche.domain.controllers;
 import com.tyche.domain.user.User;
 import com.tyche.dtos.UserCreateDTO;
 import com.tyche.dtos.UserUpdateDTO;
+import com.tyche.dtos.UserStatusUpdateDTO;
 import com.tyche.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController()
+@RestController
 @RequestMapping("/users")
 public class UserController {
 
@@ -25,9 +26,15 @@ public class UserController {
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
-    @PutMapping
-    public ResponseEntity<User> updateUser(@RequestBody UserUpdateDTO user){
+    @PutMapping("/update")
+    public ResponseEntity<User> userUpdate(@RequestBody UserUpdateDTO user){
         User updatedUser = userService.updateUser(user);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PutMapping("/status")
+    public ResponseEntity<User> userStatusUpdate(@RequestBody UserStatusUpdateDTO user){
+        User updatedUser = userService.userStatusUpdate(user);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 

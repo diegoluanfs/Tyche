@@ -21,7 +21,6 @@ public class ControllerExceptionHandler {
         ExceptionDTO exceptionDTO = new ExceptionDTO("Usuário já cadastrado", "400");
         return ResponseEntity.notFound().build();
     }
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity threadGeneralException(Exception exception){
         ExceptionDTO exceptionDTO = new ExceptionDTO(exception.getMessage(), "500");
